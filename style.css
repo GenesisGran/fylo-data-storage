@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+}
+.attribution a {
+  color: hsl(228, 100%, 70%);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  min-width: 350px;
+  min-height: 300px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  background: linear-gradient(hsl(229, 57%, 11%), hsl(229, 57%, 11%)),
+    url(images/bg-desktop.png) 0% 125%;
+  background-size: 100%;
+  background-blend-mode: lighten;
+  background-repeat: no-repeat;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: 1000px;
+}
+.container > * {
+  padding: 30px;
+  background-color: hsl(228, 56%, 26%);
+  height: 100%;
+}
+.container__main {
+  position: relative;
+  align-self: flex-end;
+  width: 30%;
+  height: 115%;
+  border-radius: 10px;
+  border-top-right-radius: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container__logo {
+  margin-top: 1em;
+  width: 125px;
+}
+.container__interactive {
+  bottom: 0;
+}
+.container__ img {
+  background-color: hsl(229, 57%, 11%);
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  padding: 10px;
+  margin: 0 0.3em;
+}
+.container__storage {
+  width: 70%;
+  position: relative;
+  border-radius: 10px;
+}
+.container__storage p {
+  color: hsla(243, 100%, 93%, 0.7);
+}
+.container__storage-used span {
+  font-weight: 700;
+  color: hsl(243, 100%, 93%);
+}
+p.container__storage-left {
+  position: absolute;
+  color: hsl(229, 7%, 55%);
+  background-color: hsl(0, 0%, 100%);
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  top: -50px;
+  right: 30px;
+  font-weight: 700;
+}
+.container__storage-left::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: -18px;
+  right: 0;
+  font-size: 0px;
+  line-height: 0%;
+  width: 0px;
+  border-top: 30px solid hsl(0, 0%, 100%);
+  border-left: 30px solid transparent;
+}
+.container__storage-left span {
+  font-size: 2em;
+  color: #000;
+}
+.container__slider {
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+  background-color: hsl(229, 57%, 11%);
+}
+.container__slider::before {
+  content: "";
+  display: inline-block;
+  width: 81.5%;
+  height: 20px;
+  border-radius: 10px;
+  background: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+.container__slider::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  margin-left: -20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 100%);
+}
+.container__storage-size {
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media all and (max-height: 500px) {
+  body {
+    margin: 50px 0;
+  }
+}
+@media all and (max-width: 1000px) {
+  body {
+    background-attachment: fixed !important;
+    background: linear-gradient(hsl(229, 57%, 11%), hsl(229, 57%, 11%)),
+      url(images/bg-mobile.png);
+    background-size: cover;
+    background-blend-mode: lighten;
+    background-repeat: repeat-y;
+    gap: 3em;
+  }
+  .container {
+    flex-direction: column;
+    width: 320px;
+  }
+  .container > * {
+    width: 100%;
+  }
+  .container__storage {
+    height: 200px;
+  }
+  p.container__storage-left {
+    top: auto;
+    right: 50%;
+    bottom: -30px;
+    margin: 0 auto;
+    transform: translateX(50%);
+  }
+  .container__storage-left::after {
+    display: none;
+  }
+}
